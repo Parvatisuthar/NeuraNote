@@ -1,0 +1,90 @@
+NeuraNote/
+│
+├── 📁 frontend/                        # Chrome Extension + UI (React + HTML + CSS)
+│   ├── manifest.json                   # Chrome extension config file
+│   ├── package.json                    # React dependencies
+│   ├── public/
+│   │   ├── icon128.png
+│   │   └── index.html
+│   │
+│   ├── src/
+│   │   ├── 📁 assets/                  # Icons, logo, colors, theme assets
+│   │   ├── 📁 components/              # Reusable UI components
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   └── Loader.jsx
+│   │   │
+│   │   ├── 📁 modules/                 # Feature-based folders
+│   │   │   ├── 📁 task_planner/        # AI Task Planner (feature 1)
+│   │   │   │   ├── TaskInput.jsx
+│   │   │   │   ├── TaskScheduler.jsx
+│   │   │   │   └── taskPlannerAPI.js   # Calls backend FastAPI endpoints
+│   │   │   │
+│   │   │   ├── 📁 clarify_ai/          # Clarify AI (feature 2)
+│   │   │   │   ├── ClarifyPopup.jsx
+│   │   │   │   └── clarifyAPI.js
+│   │   │   │
+│   │   │   ├── 📁 smart_notes/         # Smart Notes (feature 3)
+│   │   │   │   ├── NotesView.jsx
+│   │   │   │   ├── HighlightCapture.js
+│   │   │   │   └── notesAPI.js
+│   │   │   │
+│   │   │   ├── 📁 timelens/            # TimeLens (feature 4)
+│   │   │   │   ├── FocusReminder.jsx
+│   │   │   │   └── timeLensAPI.js
+│   │   │   │
+│   │   │   ├── 📁 video_pause/         # Auto Video Pause (feature 5)
+│   │   │   │   ├── videoListener.js
+│   │   │   │   └── videoController.js
+│   │   │   │
+│   │   │   └── 📁 dashboard/           # Dashboard view (summary of all)
+│   │   │       ├── Dashboard.jsx
+│   │   │       └── StatsChart.jsx
+│   │   │
+│   │   ├── 📁 utils/                   # Helper functions (API calls, storage)
+│   │   │   ├── storage.js
+│   │   │   └── apiClient.js
+│   │   │
+│   │   ├── 📁 styles/                  # CSS or Tailwind files
+│   │   │   ├── theme.css
+│   │   │   └── colors.css
+│   │   │
+│   │   └── index.js                    # React entry file
+│   │
+│   └── README.md
+│
+├── 📁 backend/                         # FastAPI backend
+│   ├── main.py                         # Entry point
+│   ├── requirements.txt
+│   │
+│   ├── 📁 routers/                     # Separate APIs per feature
+│   │   ├── task_planner.py
+│   │   ├── clarify_ai.py
+│   │   ├── smart_notes.py
+│   │   ├── timelens.py
+│   │   └── user.py
+│   │
+│   ├── 📁 services/                    # Logic layer (AI + ML)
+│   │   ├── task_scheduler_service.py   # AI planning logic
+│   │   ├── clarify_service.py          # NLP model logic
+│   │   ├── summarizer_service.py       # Text summarization
+│   │   └── timelens_service.py         # Time analysis
+│   │
+│   ├── 📁 models/                      # Data models (Pydantic)
+│   │   ├── task_model.py
+│   │   ├── note_model.py
+│   │   └── user_model.py
+│   │
+│   ├── 📁 database/                    # MongoDB or Firebase integration
+│   │   ├── db_config.py
+│   │   ├── task_db.py
+│   │   └── notes_db.py
+│   │
+│   └── 📁 utils/                       # Helper tools
+│       ├── ai_client.py                # Connects to OpenAI/Hugging Face
+│       └── time_utils.py
+│
+└── 📁 docs/
+    ├── SRS_Document.pdf
+    ├── API_Endpoints.md
+    └── Project_Plan.md
